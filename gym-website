@@ -1,8 +1,14 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -y apache2 zip unzip
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page285/gymster.zip /var/www/html
+#ADD https://www.free-css.com/assets/files/free-css-templates/download/page285/gymster.zip /var/www/html
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page296/spering.zip /var/www/html
+
+
 WORKDIR /var/www/html
-RUN unzip gymster.zip
-RUN cp -rvf gym-html-template/* .
+#RUN unzip gymster.zip
+RUN unzip spering.zip
+
+#RUN cp -rvf gym-html-template/* .
+RUN cp -rvf spering-html/* .
 CMD apachectl -D FOREGROUND
 EXPOSE 80
